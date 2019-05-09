@@ -23,6 +23,7 @@ function register($no)
 	$email = str_replace(" ", "", $nama) . mt_rand(100, 999);
 	$data = '{"name":"' . nama() . '","email":"' . $email . '@gmail.com","phone":"+' . $no . '","signed_up_country":"ID"}';
 	$register = request("/v5/customers", "", $data);
+	//print_r($register);
 	if ($register['success'] == 1)
 		{
 		return $register['data']['otp_token'];
