@@ -23,7 +23,7 @@ function register($no)
 	$email = str_replace(" ", "", $nama) . mt_rand(100, 999);
 	$data = '{"name":"' . nama() . '","email":"' . $email . '@gmail.com","phone":"+' . $no . '","signed_up_country":"ID"}';
 	$register = request("/v5/customers", "", $data);
-	print_r($register);
+	//print_r($register);
 	if ($register['success'] == 1)
 		{
 		return $register['data']['otp_token'];
@@ -98,7 +98,7 @@ $nope = trim(fgets(STDIN));
 $register = register($nope);
 if ($register == false)
 	{
-	echo "Failed to Get OTP!\n";
+	echo "Failed to Get OTP, Use Unregistered Number!\n";
 	}
   else
 	{
