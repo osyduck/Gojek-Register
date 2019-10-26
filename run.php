@@ -21,7 +21,7 @@ function register($no)
 	{
 	$nama = nama();
 	$email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-	$data = '{"name":"' . $nama . '","email":"' . $email . '@gmail.com","phone":"+' . $no . '","signed_up_country":"ID"}';
+	$data = '{"name":"' . $nama . '","email":"' . $email . '@mailnesia.com","phone":"+' . $no . '","signed_up_country":"ID"}';
 	$register = request("/v5/customers", "", $data);
 	//print_r($register);
 	if ($register['success'] == 1)
@@ -81,7 +81,7 @@ function veriflogin($otp, $token)
 	}
 function claim($token)
 	{
-	$data = '{"promo_code":"GOFOODHEMAT1"}';
+	$data = '{"promo_code":"GOFOODBOBA07"}';
 	$claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
 	if ($claim['success'] == 1)
 		{
