@@ -97,7 +97,7 @@ echo "Choose Login or Register? Login = 1 & Register = 2: ";
 $type = trim(fgets(STDIN));
 if($type == 2){
 echo "It's Register Way\n";
-echo "Input 62 For ID and 1 For US Phone Number\n";
+echo "Input 62 For ID Phone Number\n";
 echo "Enter Number: ";
 $nope = trim(fgets(STDIN));
 $register = register($nope);
@@ -131,7 +131,7 @@ if ($register == false)
 	}
 }else if($type == 1){
 echo "It's Login Way\n";
-echo "Input 62 For ID and 1 For US Phone Number\n";
+echo "Input 62 For ID Phone Number\n";
 echo "Enter Number: ";
 $nope = trim(fgets(STDIN));
 $login = login($nope);
