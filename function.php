@@ -1,10 +1,7 @@
 <?php
 function request($url, $token = null, $data = null, $pin = null, $location = null){
 
-$header[] = "Host: api.gojekapi.com";
 $header[] = "User-Agent: okhttp/3.12.1";
-$header[] = "Accept: application/json";
-$header[] = "Accept-Language: en-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
 $header[] = "X-AppVersion: 3.48.2";
 $header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
@@ -51,8 +48,6 @@ function nama()
 	{
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "http://ninjaname.horseridersupply.com/indonesian_name.php");
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 	$ex = curl_exec($ch);
@@ -64,7 +59,7 @@ function register($no)
 	{
 	$nama = nama();
 	$email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-	$data = '{"name":"' . $nama . '","email":"' . $email . '@gmail.com","phone":"+' . $no . '","signed_up_country":"ID"}';
+	$data = '{"name":"' . $nama . '","email":"' . $email . '@pvtnetflix.com","phone":"+' . $no . '","signed_up_country":"ID"}';
 	$register = request("/v5/customers", "", $data);
 	//print_r($register);
 	if ($register['success'] == 1)
